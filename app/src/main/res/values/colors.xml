@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="facebook">#3c5a99</color>
+    <color name="facebook_pressed">#b33c5a99</color>
+
+    <color name="google">#c94030</color>
+    <color name="google_pressed">#B3c94030</color>
+
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#cccccc</color>
+
+
+    <color name="goldman">#ffca28</color>
+
+
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#f64c73</color>
+    <color name="bg_screen2">#20d2bb</color>
+    <color name="bg_screen3">#3395ff</color>
+    <color name="bg_screen4">#c873f4</color>
+
+
+
+
+    <!--other-->
+    <color name="background_color">#f2f2f2</color>
+    <color name="divider">#f2f2f2</color>
+    <color name="text_color">#525252</color>
+    <color name="white">#ffffff</color>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/linearBookingTiket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:padding="10dp"
+            android:src="@drawable/ic_navigate_back"/>
+
+        <TextView
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/btnBookingTiket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffca28"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Pilih Waktu Event"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txtNamaEvent"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/goldman"
+        android:text="Ticket for Java Jazz Festival Prambanan 2016"/>
+
+    <TextView
+        android:id="@+id/txtTanggalEvent"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/goldman"
+        android:text="Tanggal 17 Agustus 2017"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <ListView
+        android:id="@+id/lv_jam_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:dividerHeight="10dp"
+        android:divider="@android:color/transparent"
+        android:cacheColorHint="#ffffff"
+        tools:listitem="@layout/lsv_jam_event"></ListView>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
