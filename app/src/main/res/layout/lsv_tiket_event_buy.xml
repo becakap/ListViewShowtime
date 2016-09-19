@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#212121"
+    android:background="@color/colorPrimary"
     android:orientation="vertical" >
 
     <TextView
@@ -12,23 +12,16 @@
         android:visibility="gone" />
 
 
-    <ImageView
-        android:id="@+id/img_event"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_centerVertical="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg1" />
+
 
     <!-- Child linear layout with horizontal orientation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="120dp"
         android:layout_alignBottom="@+id/img_event"
-        android:background="@drawable/drawer_top_gradient"
         android:gravity="center"
         android:maxLines="2"
-        android:padding="10dp"
+        android:padding="5dp"
         android:orientation="horizontal"
         >
 
@@ -41,23 +34,21 @@
             <TextView
                 android:id="@+id/tv_string_data"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="30dp"
                 android:textStyle="bold"
                 android:maxLines="2"
-                android:padding="10dp"
                 android:text="Presale VIP A"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="16sp"
 
                 />
 
             <TextView
                 android:id="@+id/tvharga"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:maxLines="2"
                 android:textStyle="bold|italic"
-                android:padding="10dp"
                 android:text="2 Seat  @ Rp 500.000,- = Rp 1.000.000,-"
                 android:textColor="@color/goldman"
                 android:textSize="18sp"
@@ -69,7 +60,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="5"
-                android:padding="10dp"
                 android:text="Seat 15 A, 15B, 20C "
                 android:textColor="@color/white"
                 android:textSize="16sp"

@@ -15,6 +15,8 @@ import java.util.StringTokenizer;
 
 public class CustomAdapter extends BaseAdapter {
 
+    private BookingPilihTiket booking;
+
     private static final String TAG = CustomAdapter.class.getSimpleName();
     ArrayList<DataModel>listArray;
 
@@ -81,8 +83,6 @@ public class CustomAdapter extends BaseAdapter {
         TextView textViewID = (TextView) view.findViewById(R.id.list_item_string);
         textViewID.setText(dataModel.getOtherData());
 
-
-
         Button button = (Button) view.findViewById(R.id.btn_number_data);
         button.setText("" + dataModel.getAnInt());
 
@@ -104,6 +104,7 @@ public class CustomAdapter extends BaseAdapter {
                 int kkk = xxx-1;
                 dataModel.setAnInt(kkk);
 
+
                 notifyDataSetChanged();
             }
         });
@@ -111,14 +112,29 @@ public class CustomAdapter extends BaseAdapter {
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+               TextView txtTanggalEvent =(TextView)v.findViewById(R.id.txtTanggalEvent);
+
                 int xxx = dataModel.getAnInt() ;
                 if (xxx == 99){
                     return;
                 }
                 int kkk = xxx+1;
                 dataModel.setAnInt(kkk);
-
                 notifyDataSetChanged();
+
+               // int jumlah_tiket =  listArray.size();
+               // int total_harga_tiket = 0;
+
+               // booking.ToastMaster();
+
+               /* for (int i=0 ; i< jumlah_tiket; i++){
+
+                    total_harga_tiket += listArray.get(i).getAnInt();
+
+                }
+                txtTanggalEvent.setText("Rp. "+total_harga_tiket + ">>");
+                Toast.makeText(parent.getContext(), "Total Harga Tiket " + total_harga_tiket * 5000 , Toast.LENGTH_SHORT).show();
+                */
 
             }
         });
@@ -148,4 +164,19 @@ public class CustomAdapter extends BaseAdapter {
         // because we set the click listener on the whole view
        return view;
     }
+
+
+
+
+    public interface SetValueAdapterCallback {
+
+
+
+    }
+
+
+
+
+
+
 }

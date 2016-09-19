@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_weight="0"
+        android:id="@+id/imageBank"
+        android:layout_width="110dp"
+        android:src="@drawable/bank_bni"
+        android:layout_height="110dp" />
+
+
+
+
+    <!-- Child linear layout with horizontal orientation -->
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_event"
+        android:maxLines="2"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_string_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:maxLines="3"
+                android:text="Bank BNI"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:textStyle="bold|italic"
+                android:text="Nomor Rekening"
+                android:textColor="@color/goldman"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:textStyle="bold|italic"
+                android:text="XXX-XXXX-XXXX"
+                android:textColor="@color/goldman"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:text="Atas Nama"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:text="Eldrich Bachman"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

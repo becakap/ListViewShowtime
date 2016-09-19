@@ -27,13 +27,25 @@
         android:layout_alignBottom="@+id/img_event"
         android:background="@drawable/drawer_top_gradient"
         android:gravity="center"
-        android:maxLines="2"
+        android:maxLines="4"
         android:padding="10dp"
         android:orientation="vertical"
         >
 
         <TextView
-            android:id="@+id/tvJamEvent"
+            android:id="@+id/tvNamaEventTiket"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:text="Nama Event Tiket"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+
+            />
+
+        <TextView
+            android:id="@+id/tvJamEventTiket"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:maxLines="2"

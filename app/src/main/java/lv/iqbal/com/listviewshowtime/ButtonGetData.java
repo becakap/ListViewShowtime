@@ -72,7 +72,7 @@ public class ButtonGetData extends AppCompatActivity {
                 .build(); //Finally building the adapter
 
         //Creating object for our interface
-        GetShowTimeTicketAPI api = adapter.create(GetShowTimeTicketAPI.class);
+        GetShowTimeTanggalAPI api = adapter.create(GetShowTimeTanggalAPI.class);
 
         //Defining the method insertuser of our interface
         api.kirimIdEventAPI(
@@ -119,9 +119,10 @@ public class ButtonGetData extends AppCompatActivity {
     }
 
     public void setData(String output) {
+
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        String nama_tiket_keluar ="";
-        String id_tiket_keluar = "";
+        String tanggal_tiket_keluar ="";
+
 
 
 
@@ -132,24 +133,22 @@ public class ButtonGetData extends AppCompatActivity {
             final int n = event.length();
             for (int i = 0; i < n; ++i) {
                 final JSONObject person = event.getJSONObject(i);
-                String id_tiket   = String.valueOf(person.getInt("pid"));
-                String nama_tiket = person.getString("nama");
-                nama_tiket_keluar  += nama_tiket +"|";
-                id_tiket_keluar    += id_tiket + "|";
+                String tanggal_tiket = person.getString("tanggal");
+                tanggal_tiket_keluar  += tanggal_tiket +"|";
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString("NamaTiket", nama_tiket_keluar);
-        editor.putString("IdTiket", id_tiket_keluar);
+        editor.putString("tanggal_tiket_keluar", tanggal_tiket_keluar);
         editor.commit();
 
 
-        System.out.println(nama_tiket_keluar);
+        System.out.println(tanggal_tiket_keluar);
 
-        Intent intent = new Intent(ButtonGetData.this, BookingPilihTiket.class);
+        Intent intent = new Intent(ButtonGetData.this, BookingPilihTanggal.class);
         startActivity(intent);
 
 

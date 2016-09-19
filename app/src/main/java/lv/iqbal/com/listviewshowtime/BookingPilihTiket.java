@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -64,6 +65,21 @@ public class BookingPilihTiket extends Activity {
 
         final int count = listView.getCount();
 
+      /*  listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          @Override
+          public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+               DataModel dataModel = (DataModel) adapterView.getItemAtPosition(i);
+
+               // Log.d(TAG, "string: " + dataModel.getName());
+               // Log.d(TAG, "int: " + dataModel.getAnInt());
+               // Log.d(TAG, "double: " + dataModel.getaDouble());
+               // Log.d(TAG, "otherData: " + dataModel.getOtherData());
+
+               Toast.makeText(BookingPilihTiket.this, "Item Clicked: " + dataModel.getName(), Toast.LENGTH_SHORT).show();
+           }
+        }); */
+
 
 
         btnGetCount.setOnClickListener(new View.OnClickListener() {
@@ -91,8 +107,6 @@ public class BookingPilihTiket extends Activity {
                     String idTiket = ((TextView) parentView
                             .findViewById(R.id.list_item_string)).getText().toString();
 
-
-
                     String getString = ((TextView) parentView
                             .findViewById(R.id.btn_number_data)).getText().toString();
 
@@ -100,12 +114,8 @@ public class BookingPilihTiket extends Activity {
                     variasiNamaTiket += namaTiket + "|";
                     vairasiJumlahTiket += getString + "|";
 
-
-
-
                     getTotal = Integer.parseInt(getString);
                     temp = temp + getTotal;
-
                 }
 
                 //Toast.makeText(BookingPilihTiket.this, "Jumlah Tiket " + temp, Toast.LENGTH_SHORT).show();
@@ -116,15 +126,12 @@ public class BookingPilihTiket extends Activity {
                 intent.putExtra("namaTiket",variasiNamaTiket );
                 intent.putExtra("jumlahTiket",vairasiJumlahTiket );
                 startActivity(intent);
-
-
-
             }
         });
 
-
-
     }
+
+
 
   public View getViewByPosition(int pos, ListView listView) {
         final int firstListItemPosition = listView.getFirstVisiblePosition();
@@ -137,7 +144,17 @@ public class BookingPilihTiket extends Activity {
             final int childIndex = pos - firstListItemPosition;
             return listView.getChildAt(childIndex);
         }
+  }
+
+
+    public void ToastMaster(){
+
+
+        Toast.makeText(BookingPilihTiket.this, "FUCK PENCITRAAN ", Toast.LENGTH_SHORT).show();
+
     }
+
+
 
 
 

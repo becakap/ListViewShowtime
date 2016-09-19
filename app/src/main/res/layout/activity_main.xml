@@ -68,5 +68,5 @@
         android:layout_weight="0"
         android:background="#000000"
         android:textColor="@color/goldman"
-        android:text="Submit"/>
+        android:text="Next >>"/>
 </LinearLayout>

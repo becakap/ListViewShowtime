@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:text="Silahkan transfer sebesar"/>
+
+    <TextView
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:text="Rp 200.000,-"/>
+
+    <TextView
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:text="Pada nomor rekening berikut ini. Jika anda telah melakukan pembayaran silahkan klik tombol lanjutkan pembayaran atau dari menu home  pilih pembayaran "/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <ListView
+            android:id="@+id/lv_item_tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:dividerHeight="10dp"
+            android:divider="@android:color/transparent"
+            android:cacheColorHint="#ffffff"
+            tools:listitem="@layout/lsv_data_bank"></ListView>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/goldman"
+        android:layout_alignParentBottom="true"
+        android:text="Konfirmasi Pembayaran "/>
+
+
+
+</RelativeLayout>

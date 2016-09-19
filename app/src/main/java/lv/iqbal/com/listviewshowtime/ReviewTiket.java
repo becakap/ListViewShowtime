@@ -16,7 +16,7 @@ public class ReviewTiket extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_tiket);
 
-        textViewReview = (TextView) findViewById(R.id.textViewReview);
+       // textViewReview = (TextView) findViewById(R.id.textViewReview);
 
 
 
@@ -52,7 +52,7 @@ public class ReviewTiket extends AppCompatActivity {
 
 
 
-        textViewReview.setText(Tampilan);
+      //  textViewReview.setText(Tampilan);
 
 
 
