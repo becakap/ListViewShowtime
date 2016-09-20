@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -56,6 +57,8 @@ public class BookingPilihJam extends Activity {
         setContentView(R.layout.jam_event);
         setTheme(android.R.style.Theme_Holo);
 
+        ImageView btnBack = (ImageView) findViewById(R.id.btnBack);
+
         SharedPreferences shared = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         String sNamaEventTiket = (shared.getString("nama_event_tiket_keluar", ""));
@@ -87,7 +90,14 @@ public class BookingPilihJam extends Activity {
         String[] ajam     = (String[])  jam.toArray(new String[jam.size()]);
         String[] agbr     = (String[])  gbr.toArray(new String[gbr.size()]);
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
 
+                Intent intent = new Intent(BookingPilihJam.this, BookingPilihTanggal.class);
+
+            }
+        });
 
         // Define a new Adapter
         // First parameter - Context
@@ -114,7 +124,7 @@ public class BookingPilihJam extends Activity {
                        "Position :"+itemPosition+"  itemValue : " +itemValue+ "Nama Tiket" + nama_tiket_event, Toast.LENGTH_LONG)
                       .show();
 
-               // kirimIdEvent();
+               kirimIdEvent();
 
 
             }
@@ -123,10 +133,8 @@ public class BookingPilihJam extends Activity {
     }
 
     private void kirimIdEvent() {
-
         String id_event="7";
         final String keluaran = "";
-        //Here we will handle the http request to insert user to mysql db
         //Here we will handle the http request to insert user to mysql db
         //Creating a RestAdapter
 
@@ -185,6 +193,9 @@ public class BookingPilihJam extends Activity {
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         String nama_tiket_keluar ="";
         String id_tiket_keluar = "";
+        String detail_tiket_keluar = "";
+        String harga_tiket_keluar = "";
+
 
 
 
@@ -195,27 +206,27 @@ public class BookingPilihJam extends Activity {
             final int n = event.length();
             for (int i = 0; i < n; ++i) {
                 final JSONObject person = event.getJSONObject(i);
-                String id_tiket   = String.valueOf(person.getInt("pid"));
-                String nama_tiket = person.getString("nama");
-                nama_tiket_keluar  += nama_tiket +"|";
-                id_tiket_keluar    += id_tiket + "|";
+                String id_tiket         = String.valueOf(person.getInt("pid"));
+                String nama_tiket       = person.getString("nama");
+                String detail_tiket     = person.getString("detail");
+                String harga_tiket      = person.getString("harga");
+                nama_tiket_keluar       += nama_tiket +"|";
+                id_tiket_keluar         += id_tiket + "|";
+                detail_tiket_keluar     += detail_tiket + "|";
+                harga_tiket_keluar      += harga_tiket + "|";
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString("NamaTiket", nama_tiket_keluar);
-        editor.putString("IdTiket", id_tiket_keluar);
+        editor.putString("NamaTiket",   nama_tiket_keluar);
+        editor.putString("IdTiket",     id_tiket_keluar);
+        editor.putString("DetailTiket", detail_tiket_keluar);
+        editor.putString("HargaTiket",  harga_tiket_keluar);
         editor.commit();
-
-
-        System.out.println(nama_tiket_keluar);
 
         Intent intent = new Intent(BookingPilihJam.this, BookingPilihTiket.class);
         startActivity(intent);
-
-
-
     }
 }

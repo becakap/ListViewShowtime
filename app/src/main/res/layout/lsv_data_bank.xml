@@ -13,8 +13,6 @@
         android:layout_height="110dp" />
 
 
-
-
     <!-- Child linear layout with horizontal orientation -->
     <LinearLayout
         android:layout_weight="1"
@@ -51,7 +49,8 @@
                 android:textStyle="bold|italic"
                 android:text="Nomor Rekening"
                 android:textColor="@color/goldman"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:id="@+id/textView" />
 
             <TextView
                 android:layout_width="match_parent"

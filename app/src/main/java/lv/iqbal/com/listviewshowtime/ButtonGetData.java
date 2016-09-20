@@ -142,6 +142,7 @@ public class ButtonGetData extends AppCompatActivity {
         }
 
         SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("event_sekarang", "Java Jazz Prambanan 2016");
         editor.putString("tanggal_tiket_keluar", tanggal_tiket_keluar);
         editor.commit();
 

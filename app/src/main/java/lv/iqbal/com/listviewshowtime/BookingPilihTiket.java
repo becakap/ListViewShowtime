@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,20 +40,25 @@ public class BookingPilihTiket extends Activity {
         setContentView(R.layout.activity_main);
         final ListView listView = (ListView) findViewById(R.id.list_data);
         btnGetCount = (Button)findViewById(R.id.btnGetCount);
+        ImageView btnBack = (ImageView) findViewById(R.id.btnBack);
 
 
 
         SharedPreferences shared = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         String sNamaTiket = (shared.getString("NamaTiket", ""));
         String sIdTiket = (shared.getString("IdTiket", ""));
+        String sDetailTiket = (shared.getString("DetailTiket", ""));
+        String sHargaTiket = (shared.getString("HargaTiket", ""));
 
         String pNamaTiket = sNamaTiket.replaceFirst(".$","");
         String pIdTiket = sIdTiket.replaceFirst(".$","");
+        String pDetailTiket = sDetailTiket.replaceFirst(".$","");
+        String pHargaTiket = sHargaTiket.replaceFirst(".$","");
 
 
 
 
-        CustomAdapter customAdapter = new CustomAdapter(pNamaTiket , pIdTiket);
+        CustomAdapter customAdapter = new CustomAdapter(pNamaTiket , pIdTiket, pDetailTiket, pHargaTiket);
         listView.setAdapter(customAdapter);
 
 
@@ -79,6 +85,17 @@ public class BookingPilihTiket extends Activity {
                Toast.makeText(BookingPilihTiket.this, "Item Clicked: " + dataModel.getName(), Toast.LENGTH_SHORT).show();
            }
         }); */
+
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+
+                Intent intent = new Intent(BookingPilihTiket.this, BookingPilihJam.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 
@@ -135,8 +152,7 @@ public class BookingPilihTiket extends Activity {
 
   public View getViewByPosition(int pos, ListView listView) {
         final int firstListItemPosition = listView.getFirstVisiblePosition();
-        final int lastListItemPosition = firstListItemPosition
-                + listView.getChildCount() - 1;
+        final int lastListItemPosition = firstListItemPosition + listView.getChildCount() - 1;
 
         if (pos < firstListItemPosition || pos > lastListItemPosition) {
             return listView.getAdapter().getView(pos, null, listView);
@@ -148,10 +164,7 @@ public class BookingPilihTiket extends Activity {
 
 
     public void ToastMaster(){
-
-
         Toast.makeText(BookingPilihTiket.this, "FUCK PENCITRAAN ", Toast.LENGTH_SHORT).show();
-
     }
 
 

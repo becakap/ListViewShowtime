@@ -24,16 +24,21 @@ public class CustomAdapter extends BaseAdapter {
 
 
 
-    public CustomAdapter(String pNamaTiket, String pIdTiket) {
+    public CustomAdapter(String pNamaTiket, String pIdTiket, String pDetailTiket, String pHargaTiket) {
         listArray = new ArrayList<DataModel>();
         StringTokenizer st1 = new StringTokenizer(pNamaTiket, "|");
         StringTokenizer st2 = new StringTokenizer(pIdTiket, "|");
+        StringTokenizer st3 = new StringTokenizer(pDetailTiket, "|");
+        StringTokenizer st4 = new StringTokenizer(pHargaTiket, "|");
         int k = 0;
         while (st1.hasMoreElements()) {
 
             String nmTiket  = String.valueOf(st1.nextElement());
             String nmId     = String.valueOf(st2.nextElement());
-            listArray.add(new DataModel(nmTiket, 0, nmId));
+            String detail   = String.valueOf(st3.nextElement());
+            String harga    = String.valueOf(st4.nextElement());
+            //System.out.println("Harga "+ k + " : " + harga);
+            listArray.add(new DataModel(nmTiket, 0, nmId, detail, harga));
 
             k++;
         }
@@ -82,6 +87,12 @@ public class CustomAdapter extends BaseAdapter {
 
         TextView textViewID = (TextView) view.findViewById(R.id.list_item_string);
         textViewID.setText(dataModel.getOtherData());
+
+        TextView tvharga = (TextView) view.findViewById(R.id.tvharga);
+        tvharga.setText(dataModel.getHarga());
+
+        TextView tvdetail = (TextView) view.findViewById(R.id.tvdetail);
+        tvdetail.setText(dataModel.getDetail());
 
         Button button = (Button) view.findViewById(R.id.btn_number_data);
         button.setText("" + dataModel.getAnInt());

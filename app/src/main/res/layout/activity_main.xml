@@ -14,7 +14,7 @@
         android:layout_alignParentBottom="true">
 
         <ImageView
-
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0"
@@ -39,7 +39,7 @@
         android:id="@+id/txtNamaEvent"
         android:background="@color/colorPrimaryDark"
         android:textStyle="bold"
-        android:padding="20dp"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/goldman"
@@ -49,11 +49,31 @@
         android:id="@+id/txtTanggalEvent"
         android:background="@color/colorPrimaryDark"
         android:textStyle="bold"
-        android:padding="20dp"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/goldman"
         android:text="Tanggal 17 Agustus 2017"/>
+
+    <TextView
+        android:id="@+id/txtNamaEventTiket"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/goldman"
+        android:text="Tulus - Monokrom"/>
+
+    <TextView
+        android:id="@+id/txtJamEvent"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/goldman"
+        android:text="Jam 17:00 WIB"/>
 
 
     <ListView android:id="@+id/list_data"
